@@ -1,62 +1,100 @@
 [Project]
 FileName=AlgoritmaFinalProjesi.dev
-Name=AlgoritmaFinalProjesi
-Type=1
-Ver=2
-ObjFiles=
-Includes=
-Libs=
-PrivateResource=
-ResourceIncludes=
-MakeIncludes=
-Compiler=
-CppCompiler=
-Linker=
-IsCpp=0
-Icon=
-ExeOutput=
-ObjectOutput=
-LogOutput=
-LogOutputEnabled=0
-OverrideOutput=0
-OverrideOutputName=
-HostApplication=
-UseCustomMakefile=0
-CustomMakefile=
-CommandLine=
-Folders=
-IncludeVersionInfo=0
-SupportXPThemes=0
-CompilerSet=0
-CompilerSettings=0000000000000000000000000
-UnitCount=1
+Name=KİŞİSEL TAKVİMİM
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-[VersionInfo]
-Major=1
-Minor=0
-Release=0
-Build=0
-LanguageID=1033
-CharsetID=1252
-CompanyName=
-FileVersion=
-FileDescription=Developed using the Dev-C++ IDE
-InternalName=
-LegalCopyright=
-LegalTrademarks=
-OriginalFilename=
-ProductName=
-ProductVersion=
-AutoIncBuildNr=0
-SyncProduct=1
+// Maksimum 100 etkinlik
+#define MAX_ETKINLIK 100
 
-[Unit1]
-FileName=finalProje.c
-CompileCpp=0
-Folder=
-Compile=1
-Link=1
-Priority=1000
-OverrideBuildCmd=0
-BuildCmd=
+
+ struct {
+    int gun;
+    int ay;
+    int yil;
+    char etkinlik[100];
+} etkinlik;
+
+// Etkinlik listesi
+liste[MAX_ETKINLIK];
+int etkinlikSayisi= 0;
+
+// Prototipler
+void etkinlikEkle();
+void kayitliEtkinlikler();
+void Menu();
+
+int main() {
+    int sec;
+    
+    // Menü
+    do {
+        Menu();
+        printf("Lutfen secim yapiniz.\n Etkinlik eklemek icin --->1\n Kayitli etkinliklerinizi gormek icin --->2\n Cikis yapmak icin --->3\n ");
+        scanf("%d", &sec);
+        
+        switch (sec) {
+            case 1:
+                etkinlikEkle();
+                break;
+            case 2:
+                kayitliEtkinlikler();
+                break;
+            case 3:
+                printf("Cikis yapiliyor...\n");
+                break;
+            default:
+                printf("Gecersiz tuslama yaptiniz. Lutfen tekrar deneyiniz.\n");
+        }
+    } while (sec != 3);
+    
+    return 0;
+}
+
+// Menü fonksiyonu
+void Menu() {
+    printf("\n--- Kisisel Takvimim ---\n");
+    printf("1. Etkinlik Ekle\n");
+    printf("2. Etkinlikleri Goruntule\n");
+    printf("3. Cikis\n");
+}
+
+// Etkinlik ekleme fonksiyonu
+void etkinlikEkle() {
+    if (etkinlikSayisi >= MAX_ETKINLIK) {
+        printf("Maksimum etkinlik sayisina ulastiniz.\n");
+        return;
+    }
+    int gun,ay,yil;
+    printf("\nEtkinlik eklemek icin bilgileri girin:\n");
+    printf("Gun: ");
+    scanf("%d", & gun);
+    printf("Ay: ");
+    scanf("%d", &ay);
+    printf("Yil: ");
+    scanf("%d", &yil);
+    printf("Etkinlik: ");
+ getchar();
+    
+    
+    etkinlikSayisi++;
+    printf("Etkinliginiz basariyla eklenmistir.\n");
+}
+
+//kayitli etkinlikleri gorme fonksiyonu
+void kayitliEtkinlikler() {
+    if (etkinlikSayisi == 0) {
+        printf("Kaydedilmis etkinlik bulunmamaktadir.\n");
+        return;
+    }
+    int etkinlikSayisi=0,etkinlik,i,gun,ay,yil;
+
+    printf("\nMevcut Etkinliklerim:\n");
+    for (i = 0; i < etkinlikSayisi; i++) {
+        printf("\nTarih: %d/%d/%d\n", gun, ay, yil);
+        printf("Etkinlik: %s\n", etkinlik[i]);
+    }
+}
+
 
