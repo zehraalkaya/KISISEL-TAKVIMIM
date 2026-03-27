@@ -9,5 +9,5 @@ C dili ile geliştirilmiş, kullanıcıların tarih bazlı etkinliklerini yönet
 
 ## 💻 Teknik Detaylar
 - **Dil:** C
-- [cite_start]**Veri Yapıları:** Verilerin organize edilmesi için `Struct` yapısı kullanılmıştır[cite: 47].
-- [cite_start]**Kontrol Akışı:** Döngüler ve karar yapıları ile optimize edilmiş algoritma mantığı[cite: 49].
+- **Veri Yapıları:** Verilerin organize edilmesi için `Struct` yapısı kullanılmıştır
+- **Kontrol Akışı:** Döngüler ve karar yapıları ile optimize edilmiş algoritma mantığı
