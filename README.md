@@ -5,7 +5,7 @@ C dili ile geliştirilmiş, kullanıcıların tarih bazlı etkinliklerini yönet
 ## 🛠 Özellikler
 - **Etkinlik Yönetimi:** Dinamik olarak yeni etkinlik ekleme ve silme.
 - **Listeleme:** Kayıtlı tüm etkinlikleri tarih sırasına göre görüntüleme.
-- [cite_start]**Menü Yapısı:** Kullanıcı dostu ve yönlendirmeli kontrol paneli
+- **Menü Yapısı:** Kullanıcı dostu ve yönlendirmeli kontrol paneli
 
 ## 💻 Teknik Detaylar
 - **Dil:** C
